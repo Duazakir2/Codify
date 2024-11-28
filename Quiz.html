@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>HTML Quiz</h1>
+  </header>
+  <main>
+    <section>
+      <form id="quizForm">
+        <div class="question">
+          <p><strong>1. What does HTML stand for?</strong></p>
+          <label><input type="radio" name="q1" value="a"> Hyper Text Markup Language</label><br>
+          <label><input type="radio" name="q1" value="b"> High Text Machine Language</label><br>
+          <label><input type="radio" name="q1" value="c"> Home Tool Markup Language</label><br>
+        </div>
+        <div class="question">
+          <p><strong>2. Which tag is used to create a hyperlink?</strong></p>
+          <label><input type="radio" name="q2" value="a"> `<link>`</label><br>
+          <label><input type="radio" name="q2" value="b"> `<a>`</label><br>
+          <label><input type="radio" name="q2" value="c"> `<href>`</label><br>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+
+      <div id="results" class="results" style="display: none;">
+        <h2>Your Results</h2>
+        <p id="score"></p>
+        <div id="answers"></div>
+      </div>
+    </section>
+  </main>
+</body>
+
+<script>
+  document.getElementById('quizForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Correct answers object
+    const correctAnswers = {
+      q1: 'a',
+      q2: 'b'
+    };
+
+    // User's answers
+    let score = 0;
+    const totalQuestions = Object.keys(correctAnswers).length;
+    const answersDiv = document.getElementById('answers');
+    answersDiv.innerHTML = ''; // Clear previous results
+
+    Object.keys(correctAnswers).forEach((questionId) => {
+      const userAnswer = document.querySelector(`input[name="${questionId}"]:checked`);
+      const correctAnswer = correctAnswers[questionId];
+      const questionResult = document.createElement('p');
+
+      if (userAnswer) {
+        if (userAnswer.value === correctAnswer) {
+          score++;
+          questionResult.innerHTML = `<strong>Question ${questionId.slice(1)}:</strong> Correct!`;
+          questionResult.style.color = 'green';
+        } else {
+          questionResult.innerHTML = `<strong>Question ${questionId.slice(1)}:</strong> Incorrect! Correct answer is: <em>${correctAnswer.toUpperCase()}</em>`;
+          questionResult.style.color = 'red';
+        }
+      } else {
+        questionResult.innerHTML = `<strong>Question ${questionId.slice(1)}:</strong> No answer selected! Correct answer is: <em>${correctAnswer.toUpperCase()}</em>`;
+        questionResult.style.color = 'orange';
+      }
+
+      answersDiv.appendChild(questionResult);
+    });
+
+    // Display score and answers
+    document.getElementById('score').textContent = `You scored ${score} out of ${totalQuestions}.`;
+    document.getElementById('results').style.display = 'block';
+  });
+</script>
+
+<style>
+  .results {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+  }
+  .results h2 {
+    color: #4CAF50;
+  }
+</style>
+</html>

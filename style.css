@@ -1,0 +1,325 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(3, 43, 80); /* For browsers that do not support gradients */
+  background-image: linear-gradient(to top right, rgb(3, 43, 80), rgb(24, 24, 23));
+    color: #333;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #094b97;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  header .logo h1 {
+    margin: 0;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+  
+  nav a.active, nav a:hover {
+    background: white;
+    color: #094b97;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  
+.contact-section {
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Contact Form Styles */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-group label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+textarea {
+  resize: none; /* Prevent resizing */
+  height: 120px;
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 10px;
+  }
+
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9rem;
+  }
+
+  .submit-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+  .social-media {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .social-media h3 {
+    color: #094b97;
+    margin-bottom: 15px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    color: white;
+    background: #094b97;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    transition: background 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    background: #094b97;
+  }
+  
+  /* Icons Styling */
+  .social-icons a i {
+    font-size: 20px;
+  }
+  .downloads {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .downloads h2 {
+    color: #094b97;
+    margin-bottom: 20px;
+  }
+  
+  .downloads ul {
+    list-style: none;
+    padding: 5px;
+  }
+  
+  .downloads ul li {
+    margin: 20px 20px 20px;
+    position: left;
+
+  }
+  
+  .downloads ul li a {
+    text-decoration: none;
+    color: #094b97;
+    font-weight: bold;
+    padding: 2px 15px;
+    border: 2px solid #094b97;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .downloads ul li a:hover {
+    background: #094b97;
+    color: white;
+  }
+
+  footer
+  {
+
+    padding: 50PX;
+  }
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Adjust height as needed */
+    background-image: url('main.jpg'); /* Replace with your background image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: x-large;
+  }
+  .hero-text {
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .hero-text h1 {
+    font-size: 48px; /* Adjust as needed */
+    margin-bottom: 10px;
+  }
+  
+  .hero-text p {
+    font-size: 24px;
+  }
+  
+  /* Hover Effect for Hero Section */
+  .hero-section:hover .hero-text {
+    opacity: 1;
+  }
+  /* Two-Column Section Styles */
+/* Two-Column Section Styles */
+.two-column {
+  display: flex; /* Flexbox layout for columns */
+  justify-content: space-between; /* Space between columns */
+  gap: 20px; /* Spacing between columns */
+  padding: 20px; /* Padding for the section */
+  background-color: #f4f4f4; /* Background color for the section */
+}
+
+.column {
+  flex: 1; /* Each column takes equal width */
+  padding: 15px; /* Inner padding for columns */
+  color: black; /* Text color to ensure readability over the background images */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Optional text shadow */
+  border-radius: 5px; /* Rounded corners */
+  position: relative; /* For text placement on the image */
+  overflow: hidden; /* Ensures content stays inside the column */
+}
+
+/* Background Images for Each Column */
+.column-1 {
+  background-image: url('12.jpg'); /* Replace with your image URL */
+  background-size: cover; /* Ensure the image covers the entire column */
+  background-position: center; /* Center the image */
+  padding: 15px;
+  margin: 15px;
+}
+
+.column-2 {
+  background-image: url('image2.jpg'); /* Replace with your image URL */
+  background-size: cover; /* Ensure the image covers the entire column */
+  background-position: center; /* Center the image */
+  padding: 15px;
+  margin: 15px;
+}
+.column-3 {
+  background-image: url('image2.jpg'); /* Replace with your image URL */
+  background-size: cover; /* Ensure the image covers the entire column */
+  background-position: center; /* Center the image */
+  padding: 15px;
+  margin: 15px;
+}
+.column-4 {
+  background-image: url('image2.jpg'); /* Replace with your image URL */
+  background-size: cover; /* Ensure the image covers the entire column */
+  background-position: center; /* Center the image */
+  padding: 15px;
+  margin: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .two-column {
+    flex-direction: column; /* Stack columns on smaller screens */
+    gap: 10px; /* Adjust spacing for smaller screens */
+  }
+}
+.image-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5; /* Optional background color */
+}
+.image-banner  h2 {
+  font-weight: 500;
+  text-align: left;
+}
+
+.image-container img {
+  max-width: 200%;
+  height: 200;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
